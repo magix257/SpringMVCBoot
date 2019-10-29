@@ -2,8 +2,11 @@ package com.telusko.springmvcboot;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.telusko.springmvcboot.model.Alien;
 
 @Controller
 public class HomeController 
@@ -24,5 +27,14 @@ public class HomeController
 		
 		return "result";
 	}
+	
+	@RequestMapping("addAlien")
+	public String addAlien(Alien a)
+	{
+
+		
+		return "result";	
+	}
+	
 	
 }

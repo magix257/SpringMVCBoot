@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-Result is : ${num3}
+Result is : ${alien}
 
 </body>
 </html>
