@@ -11,6 +11,12 @@ import com.telusko.springmvcboot.model.Alien;
 @Controller
 public class HomeController 
 {
+	@ModelAttribute
+	public void modelData(Model m)
+	{
+		m.addAttribute("name", "Aliens");
+	}
+	
 	@RequestMapping("/")
 	public String home()
 	{
