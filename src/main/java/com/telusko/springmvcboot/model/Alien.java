@@ -3,6 +3,12 @@ package com.telusko.springmvcboot.model;
 public class Alien {
 
 	private int aid;
+	
+	public Alien(int aid, String aname) {
+		super();
+		this.aid = aid;
+		this.aname = aname;
+	}
 	private String aname;
 	public int getAid() {
 		return aid;

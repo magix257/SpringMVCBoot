@@ -1,10 +1,14 @@
 package com.telusko.springmvcboot;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.telusko.springmvcboot.model.Alien;
 
@@ -22,19 +26,16 @@ public class HomeController
 	{
 		return "index";
 	}
-	
-	@RequestMapping("add")
-	public String add(@RequestParam("num1") int i, @RequestParam("num2") int j, Model m)
+	@GetMapping("getAliens")
+	public String getAliens(Model m)
 	{
-	
-	
-		int num3 = i + j;
-	m.addAttribute("num3",num3);
+		List<Alien> aliens = Arrays.asList(new Alien(101, "Navin"), new Alien(102, "Rose"));
+		m.addAttribute("result", aliens);
 		
-		return "result";
+		return "showAliens";
 	}
 	
-	@RequestMapping("addAlien")
+	@PostMapping("addAlien")
 	public String addAlien(Alien a)
 	{
 

@@ -11,7 +11,7 @@ Welcome to Telusko
 
 
 
-<form action="addAlien">
+<form action="addAlien" method="post">
 Enter your id : <input type="text" name="aid"><br>
 Enter name : <input type="text" name="aname"><br>
 <input type="submit">
