@@ -1,8 +1,6 @@
 package com.telusko.springmvcboot;
 
-import java.util.Arrays;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +13,9 @@ import com.telusko.springmvcboot.model.Alien;
 @Controller
 public class HomeController 
 {
+	@Autowired
+	AlienRepo repo;
+	
 	@ModelAttribute
 	public void modelData(Model m)
 	{
@@ -29,8 +30,8 @@ public class HomeController
 	@GetMapping("getAliens")
 	public String getAliens(Model m)
 	{
-		List<Alien> aliens = Arrays.asList(new Alien(101, "Navin"), new Alien(102, "Rose"));
-		m.addAttribute("result", aliens);
+		
+		m.addAttribute("result", repo.findAll());
 		
 		return "showAliens";
 	}

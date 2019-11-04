@@ -1,8 +1,15 @@
 package com.telusko.springmvcboot.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Alien {
 
+	@Id
 	private int aid;
+	
+	public Alien() {}
 	
 	public Alien(int aid, String aname) {
 		super();
