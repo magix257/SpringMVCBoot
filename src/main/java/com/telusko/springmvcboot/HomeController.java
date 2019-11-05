@@ -40,7 +40,7 @@ public class HomeController
 	public String addAlien(Alien a)
 	{
 
-		
+		repo.save(a);
 		return "result";	
 	}
 	
